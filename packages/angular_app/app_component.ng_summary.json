@@ -97,7 +97,7 @@
       "lifecycleHooks": [],
       "template": {
         "encapsulation": 0,
-        "template": "    <ul>\n      <li><a [routerLink]=\"['Cont1', 'Part1']\">Cont1/Part1</a></li>\n      <li><a [routerLink]=\"['Cont1', 'Part2']\">Cont1/Part2</a></li>\n      <li><a [routerLink]=\"['Cont2', 'Part1']\">Cont2/Part1</a></li>\n      <li><a [routerLink]=\"['Cont2', 'Part2']\">Cont2/Part2</a></li>\n    </ul>\n    <router-outlet></router-outlet>\n  ",
+        "template": "    <div>\n      <h3>Top Links</h3>\n      <ul>\n        <li><a [routerLink]=\"['Cont1', 'Part1']\">Cont1/Part1</a></li>\n        <li><a [routerLink]=\"['Cont1', 'Part2']\">Cont1/Part2</a></li>\n        <li><a [routerLink]=\"['Cont2', 'Part1']\">Cont2/Part1</a></li>\n        <li><a [routerLink]=\"['Cont2', 'Part2']\">Cont2/Part2</a></li>\n      </ul>\n    </div>\n    <div>\n      <h3>Router Outlet</h3>\n      <router-outlet></router-outlet>\n    </div>\n  ",
         "templateUrl": "asset:angular_app/lib/app_component.dart",
         "styles": [
           "    .router-link-active {\n      color: #d3531a;\n    }\n  "
@@ -141,10 +141,12 @@
       "hostAttributes": {},
       "lifecycleHooks": [],
       "template": {
-        "encapsulation": 2,
-        "template": "    <h1>Cont1 XXXXXX YYYY</h1>\n    <router-outlet></router-outlet>\n  ",
+        "encapsulation": 0,
+        "template": "    <h1>Cont1</h1>\n    <div>\n      <h3>Nested links</h3>\n        <li><a [routerLink]=\"['Cont1', 'Part1']\">nested Cont1/Part1</a></li>\n        <li><a [routerLink]=\"['Cont1', 'Part2']\">nested Cont1/Part2</a></li>\n    </div>\n    <div>\n      <h3>Router Outlet</h3>\n      <router-outlet></router-outlet>\n    </div>\n  ",
         "templateUrl": "asset:angular_app/lib/app_component.dart",
-        "styles": [],
+        "styles": [
+          "    .router-link-active {\n      color: #d3531a;\n    }\n  "
+        ],
         "styleUrls": [],
         "ngContentSelectors": []
       },
@@ -176,10 +178,12 @@
       "hostAttributes": {},
       "lifecycleHooks": [],
       "template": {
-        "encapsulation": 2,
-        "template": "    <h1>Cont2</h1>\n    <router-outlet></router-outlet>\n  ",
+        "encapsulation": 0,
+        "template": "    <h1>Cont2</h1>\n    <div>\n      <h3>Nested links</h3>\n        <li><a [routerLink]=\"['Cont2', 'Part1']\">nested Cont2/Part1</a></li>\n        <li><a [routerLink]=\"['Cont2', 'Part2']\">nested Cont2/Part2</a></li>\n    </div>\n    <div>\n      <h3>Router Outlet</h3>\n      <router-outlet></router-outlet>\n    </div>\n  ",
         "templateUrl": "asset:angular_app/lib/app_component.dart",
-        "styles": [],
+        "styles": [
+          "    .router-link-active {\n      color: #d3531a;\n    }\n  "
+        ],
         "styleUrls": [],
         "ngContentSelectors": []
       },
