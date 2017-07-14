@@ -10,6 +10,7 @@ dependencies:
 
 dev_dependencies:
   dart_to_js_script_rewriter: ^1.0.1
+  browser: ^0.10.0
 
 transformers:
 - angular2:

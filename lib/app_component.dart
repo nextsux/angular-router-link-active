@@ -21,9 +21,22 @@ class Part2 {
 @Component(
   selector: 'container1',
   template: '''
-    <h1>Cont1 XXXXXX YYYY</h1>
-    <router-outlet></router-outlet>
+    <h1>Cont1</h1>
+    <div>
+      <h3>Nested links</h3>
+        <li><a [routerLink]="['Cont1', 'Part1']">nested Cont1/Part1</a></li>
+        <li><a [routerLink]="['Cont1', 'Part2']">nested Cont1/Part2</a></li>
+    </div>
+    <div>
+      <h3>Router Outlet</h3>
+      <router-outlet></router-outlet>
+    </div>
   ''',
+  styles: const ['''
+    .router-link-active {
+      color: #d3531a;
+    }
+  '''],
   directives: const [ROUTER_DIRECTIVES],
 )
 @RouteConfig(const [
@@ -37,8 +50,21 @@ class Cont1 {
   selector: 'container2',
   template: '''
     <h1>Cont2</h1>
-    <router-outlet></router-outlet>
+    <div>
+      <h3>Nested links</h3>
+        <li><a [routerLink]="['Cont2', 'Part1']">nested Cont2/Part1</a></li>
+        <li><a [routerLink]="['Cont2', 'Part2']">nested Cont2/Part2</a></li>
+    </div>
+    <div>
+      <h3>Router Outlet</h3>
+      <router-outlet></router-outlet>
+    </div>
   ''',
+  styles: const ['''
+    .router-link-active {
+      color: #d3531a;
+    }
+  '''],
   directives: const [ROUTER_DIRECTIVES],
 )
 @RouteConfig(const [
@@ -51,13 +77,19 @@ class Cont2 {
 @Component(
   selector: 'my-app',
   template: '''
-    <ul>
-      <li><a [routerLink]="['Cont1', 'Part1']">Cont1/Part1</a></li>
-      <li><a [routerLink]="['Cont1', 'Part2']">Cont1/Part2</a></li>
-      <li><a [routerLink]="['Cont2', 'Part1']">Cont2/Part1</a></li>
-      <li><a [routerLink]="['Cont2', 'Part2']">Cont2/Part2</a></li>
-    </ul>
-    <router-outlet></router-outlet>
+    <div>
+      <h3>Top Links</h3>
+      <ul>
+        <li><a [routerLink]="['Cont1', 'Part1']">Cont1/Part1</a></li>
+        <li><a [routerLink]="['Cont1', 'Part2']">Cont1/Part2</a></li>
+        <li><a [routerLink]="['Cont2', 'Part1']">Cont2/Part1</a></li>
+        <li><a [routerLink]="['Cont2', 'Part2']">Cont2/Part2</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Router Outlet</h3>
+      <router-outlet></router-outlet>
+    </div>
   ''',
   directives: const [ROUTER_DIRECTIVES],
   providers: const [ROUTER_PROVIDERS],
